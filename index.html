@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="helloApp">
+	<head>
+		<title>AngularJS-Add/Remove</title>
+		<link rel="stylesheet"
+			href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+			<script
+				src="https://code.jquery.com/jquery-3.2.1.min.js"
+				integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+				crossorigin="anonymous">
+			</script>
+			<script
+				src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+			</script>
+			<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+		</head>
+		<!--Controller definition-->
+		<body ng-controller="CompanyCtrl">
+			<table class="table">
+				<tr>
+					<th>Name</th>
+					<th>Employees</th>
+					<th>Head Office</th>
+					<th>Action</th>
+				</tr>
+				<tr ng-repeat="company in companies">
+					<td>{{company.name}}</td>
+					<td>{{company.employees}}</td>
+					<td>{{company.headoffice}}</td>
+					<td><input type="button" value="Remove" class="btn btn-primary" ng-click="removeRow(company.name)"/></td>
+				</tr>
+				<form>
+					<input type="text" ng-model="name">
+					<input type="text" ng-model="employees">
+					<input type="text" ng-model="headoffice">
+					<input type="submit" value="Add" class="btn btn-primary"
+				ng-click="addRow()"/></td>
+			</form>
+		</table>
+		<script src="JS/controller.js"></script>
+	</body>
+</html>
